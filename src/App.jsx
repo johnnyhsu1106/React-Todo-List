@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import NewTodoForm from './NewTodoForm';
 import TodoList from './TodoList';
 import SearchBar from './SearchBar';
@@ -9,6 +9,7 @@ import './App.css'
 const LOCAL_STORAGE_KEY = 'ITEM';
 
 const App = () => {
+  const [query, setQuery] = useState('');
   const [todos, setTodos] = useState(() => {
     const todos = localStorage.getItem(LOCAL_STORAGE_KEY);
     
@@ -18,12 +19,12 @@ const App = () => {
     return JSON.parse(todos);
   });
 
-  const [query, setQuery] = useState('');
 
-
-  const filteredTodos = todos.filter((todo) => {
-    return todo.title.toLowerCase().includes(query.toLocaleLowerCase());
-  });
+  const filteredTodos = useMemo(() => {
+    return todos.filter((todo) => {
+      return todo.title.toLowerCase().includes(query.toLocaleLowerCase());
+    });
+  }, [todos, query]);
 
   // Storage all todos to local storage
   useEffect(() => {
@@ -83,7 +84,7 @@ const App = () => {
         onToggleTodo={handleTodoToggle} 
         onDeleteTodo={handleTodoDelete}
       />
-      
+
       <ControlButtons
         onDeleteCompletedTos={handleCompletedTodosDelete}
         onDeltedAllTodos={handleAllTodosDelete} 
