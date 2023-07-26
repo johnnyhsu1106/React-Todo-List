@@ -1,8 +1,18 @@
-# React + Vite
+### Getting Started
+This is a To Do List built based on React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Checkout this repo, install dependencies, then start the gulp process with the following:
+```
+> npm install
+> npm dev
+```
+![image](https://github.com/johnnyhsu1106/react-todo-list/assets/18588513/f5f3d5da-ae27-4064-b1cc-1c4696687d68)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/johnnyhsu1106/react-todo-list/assets/18588513/91352fe9-5ae2-4fca-9377-697b5d523f6b)
+
+
+![image](https://github.com/johnnyhsu1106/react-todo-list/assets/18588513/5f4bb625-90c1-4dac-ae9e-e28e8e0cec21)
+
+
+

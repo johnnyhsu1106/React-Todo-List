@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import NewTodoForm from './NewTodoForm';
 import TodoList from './TodoList';
 import SearchBar from './SearchBar';
+import ControlButtons from './ControlButtons';
 
 import './App.css'
 
@@ -61,6 +62,7 @@ const App = () => {
 
   const handleAllTodosDelete = () => {
     setTodos([]);
+    setQuery('');
   };
 
   const hangleSearchQueryChange = (query) => {
@@ -76,18 +78,18 @@ const App = () => {
         onChangeSearchQuery={hangleSearchQueryChange} 
       />
 
-      <h1 className='header'>Todo List</h1>
-      <div>{todos.length === 0 ? 'Start to add todo ...' : null}</div>
-      
-      
-
       <TodoList
         todos={filteredTodos} 
         onToggleTodo={handleTodoToggle} 
         onDeleteTodo={handleTodoDelete}
-        onDeleteCompletedTodos={handleCompletedTodosDelete}
-        onDeleteAllTodos={handleAllTodosDelete}
       />
+
+      <ControlButtons
+        onDeleteCompletedTos={handleCompletedTodosDelete}
+        onDeltedAllTodos={handleAllTodosDelete} 
+      />
+
+
     </>
   )
 }

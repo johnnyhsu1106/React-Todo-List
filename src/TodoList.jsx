@@ -4,12 +4,12 @@ const TodoList = ({
   todos, 
   onToggleTodo,
   onDeleteTodo,
-  onDeleteCompletedTodos,
-  onDeleteAllTodos
   }) => {
     
   return (
     <>
+      <h1 className='header'>Todo List</h1>
+      <div>{todos.length === 0 ? 'Start to add todo ...' : null}</div>
 
       <ul className='list'>
         {todos.map((todo) => {
@@ -24,20 +24,6 @@ const TodoList = ({
           )
         })}
       </ul>
-      <button 
-        type='text' 
-        className='btn btn-warning'
-        onClick={onDeleteCompletedTodos}
-      >
-        Delete Completed
-      </button>
-      <button 
-        type='reset' 
-        className='btn btn-danger reset'
-        onClick={onDeleteAllTodos}
-      >
-        Reset
-      </button>
     </>
   )
 }
