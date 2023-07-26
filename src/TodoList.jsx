@@ -1,14 +1,16 @@
-import React from 'react';
 import Todo from './Todo';
 
 const TodoList = ({
   todos, 
   onToggleTodo,
   onDeleteTodo,
-  onDeleteCompletedTodos
+  onDeleteCompletedTodos,
+  onDeleteAllTodos
   }) => {
+    
   return (
     <>
+
       <ul className='list'>
         {todos.map((todo) => {
           const {id} = todo;
@@ -24,10 +26,17 @@ const TodoList = ({
       </ul>
       <button 
         type='text' 
-        className='btn'
+        className='btn btn-warning'
         onClick={onDeleteCompletedTodos}
       >
-        Delete Completed Todos
+        Delete Completed
+      </button>
+      <button 
+        type='reset' 
+        className='btn btn-danger reset'
+        onClick={onDeleteAllTodos}
+      >
+        Reset
       </button>
     </>
   )

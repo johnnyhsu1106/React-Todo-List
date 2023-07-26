@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import NewTodoForm from './NewTodoForm';
 import TodoList from './TodoList';
+import SearchBar from './SearchBar';
+
 import './App.css'
 
 const LOCAL_STORAGE_KEY = 'ITEM';
@@ -13,6 +15,13 @@ const App = () => {
       return [];
     }
     return JSON.parse(todos);
+  });
+
+  const [query, setQuery] = useState('');
+
+
+  const filteredTodos = todos.filter((todo) => {
+    return todo.title.toLowerCase().includes(query.toLocaleLowerCase());
   });
 
   // Storage all todos to local storage
@@ -50,19 +59,34 @@ const App = () => {
     })
   };
 
+  const handleAllTodosDelete = () => {
+    setTodos([]);
+  };
+
+  const hangleSearchQueryChange = (query) => {
+    setQuery(query);
+  };
+
   return (
     <>
       <NewTodoForm onAddTodo={handleTodoAdd} />
 
+      <SearchBar
+        query={query}
+        onChangeSearchQuery={hangleSearchQueryChange} 
+      />
+
       <h1 className='header'>Todo List</h1>
+      <div>{todos.length === 0 ? 'Start to add todo ...' : null}</div>
       
-      {todos.length === 0 ? 'Add something to your to do list ...' : null}
+      
 
       <TodoList
-        todos={todos} 
+        todos={filteredTodos} 
         onToggleTodo={handleTodoToggle} 
         onDeleteTodo={handleTodoDelete}
-        onDeleteCompletedTodos={handleCompletedTodosDelete} 
+        onDeleteCompletedTodos={handleCompletedTodosDelete}
+        onDeleteAllTodos={handleAllTodosDelete}
       />
     </>
   )

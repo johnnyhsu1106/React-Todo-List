@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 30px;
 }
 
 .form-row {
@@ -24,6 +25,7 @@ body {
 }
 
 .btn {
+  width: 100%;
   display: inline-block;
   background: hsl(200, 100%, 50%, 0.1);
   border: 1px solid hsl(200, 100%, 50%);
@@ -39,10 +41,20 @@ body {
   background: hsl(200, 100%, 50%, 0.2);
 }
 
+.btn.btn-warning {
+
+}
+
 .btn.btn-danger {
   background: hsl(0, 100%, 40%, 0.2);
   border: 1px solid hsl(0, 100%, 40%);
   color: #eee;
+  width: auto;
+}
+
+.btn.btn-danger.reset {
+  width: 100%;
+  margin-top: 20px;
 }
 
 .btn.btn-danger:hover,
