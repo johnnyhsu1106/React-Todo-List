@@ -25,4 +25,4 @@ const ControlButtons = ( {
   )
 }
 
-export default ControlButtons
+export default ControlButtons;

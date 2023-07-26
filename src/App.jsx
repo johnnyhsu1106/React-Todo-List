@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from 'react'
+
 import NewTodoForm from './NewTodoForm';
-import TodoList from './TodoList';
 import SearchBar from './SearchBar';
+import TodoList from './TodoList';
 import ControlButtons from './ControlButtons';
 
 import './App.css'
@@ -12,7 +13,6 @@ const App = () => {
   const [query, setQuery] = useState('');
   const [todos, setTodos] = useState(() => {
     const todos = localStorage.getItem(LOCAL_STORAGE_KEY);
-    
     if (todos === null) {
       return [];
     }
