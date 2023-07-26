@@ -19,7 +19,6 @@ const App = () => {
     return JSON.parse(todos);
   });
 
-
   const filteredTodos = useMemo(() => {
     return todos.filter((todo) => {
       return todo.title.toLowerCase().includes(query.toLocaleLowerCase());

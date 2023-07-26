@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 
 const NewTodoForm = ({onAddTodo}) => {
-  // const [newTodo, setNewTodo] = useState('');
   const todoRef = useRef();
 
   const handleFormSubmit = (e) => {
@@ -14,7 +13,6 @@ const NewTodoForm = ({onAddTodo}) => {
     
     onAddTodo(newTodo);
     todoRef.current.value = null;
-    // setNewTodo('');
   };
 
   return (
@@ -23,13 +21,10 @@ const NewTodoForm = ({onAddTodo}) => {
       onSubmit={handleFormSubmit}
     >
       <div className='form-row'>
-        <label htmlFor='todo'>New Todo</label>
         <input 
           type='text' 
-          id='todo' 
+          placeholder='Add new todo'
           ref={todoRef}
-          // value={newTodo}
-          // onChange={(e) => {setNewTodo(e.target.value)}}
         />
       </div>
       <button type='submit' className='btn'>Add</button>
