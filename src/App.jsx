@@ -83,13 +83,11 @@ const App = () => {
         onToggleTodo={handleTodoToggle} 
         onDeleteTodo={handleTodoDelete}
       />
-
+      
       <ControlButtons
         onDeleteCompletedTos={handleCompletedTodosDelete}
         onDeltedAllTodos={handleAllTodosDelete} 
       />
-
-
     </>
   )
 }
