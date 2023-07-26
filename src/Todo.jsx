@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Todo = ({todo, onDeleteTodo, onToggleTodo}) => {
   const {id, title, isCompleted} = todo;
 

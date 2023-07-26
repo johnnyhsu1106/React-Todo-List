@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 const NewTodoForm = ({onAddTodo}) => {
   const todoRef = useRef();

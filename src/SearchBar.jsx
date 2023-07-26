@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SearchBar = ({ query, onChangeSearchQuery }) => {
   return (
     <>
