@@ -1,7 +1,14 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { useTodoContext } from '../context/TodoContext';
 
-const NewTodoForm = ({onAddTodo}) => {
+
+const NewTodoForm = () => {
   const todoRef = useRef();
+  const { handleTodoAdd } = useTodoContext();
+
+  useEffect(() => {
+    todoRef.current.focus();
+  }, [])
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -11,9 +18,10 @@ const NewTodoForm = ({onAddTodo}) => {
       return;
     }
     
-    onAddTodo(newTodo);
+    handleTodoAdd(newTodo);
     todoRef.current.value = null;
   };
+
 
   return (
     <form 

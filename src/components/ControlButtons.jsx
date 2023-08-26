@@ -1,13 +1,18 @@
-const ControlButtons = ( {
-  onDeleteCompletedTos,
-  onDeltedAllTodos
-}) => {
+import { useTodoContext } from '../context/TodoContext';
+
+
+const ControlButtons = () => {
+  const {
+    handleCompletedTodosDelete,
+    handleAllTodosDelete
+  } = useTodoContext();
+  
   return (
     <>
       <button
         type='text'
         className='btn btn-warning'
-        onClick={onDeleteCompletedTos}
+        onClick={handleCompletedTodosDelete}
       >
         Delete Completed
       </button>
@@ -15,7 +20,7 @@ const ControlButtons = ( {
       <button
         type='reset'
         className='btn btn-danger reset'
-        onClick={onDeltedAllTodos}
+        onClick={handleAllTodosDelete}
       >
         Reset
       </button>
