@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Form, Button } from 'react-bootstrap';
 import { useTodoContext } from '../context/TodoContext';
 
 
@@ -24,19 +25,23 @@ const NewTodoForm = () => {
 
 
   return (
-    <form 
-      className='new-todo-form' 
-      onSubmit={handleFormSubmit}
-    >
-      <div className='form-row'>
-        <input 
-          type='text' 
-          placeholder='Add new todo'
+    <Form onSubmit={handleFormSubmit} className='flex justify-content-end mb-5'>
+      <Form.Group className="mb-3" controlId="TodoForm">
+        <Form.Label hidden>To do</Form.Label>
+        <Form.Control 
           ref={todoRef}
-        />
-      </div>
-      <button type='submit' className='btn'>Add</button>
-    </form>
+          type="text" 
+          placeholder="Add todo" />
+      </Form.Group>
+
+      <Button 
+        className='w-100'
+        variant="secondary" 
+        type="submit"
+      >
+        Submit
+      </Button>
+    </Form>
   )
 }
 

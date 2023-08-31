@@ -1,3 +1,4 @@
+import { ButtonGroup, Button, Stack } from 'react-bootstrap';
 import { useTodoContext } from '../context/TodoContext';
 
 
@@ -9,21 +10,22 @@ const ControlButtons = () => {
   
   return (
     <>
-      <button
-        type='text'
-        className='btn btn-warning'
+      <Button
+        className='fs-0'
+        size='sm'
+        variant='outline-light'
         onClick={handleCompletedTodosDelete}
       >
         Delete Completed
-      </button>
-
-      <button
-        type='reset'
-        className='btn btn-danger reset'
+      </Button>
+      <div className='vr' />
+      <Button 
+        size='sm'
+        variant='danger'
         onClick={handleAllTodosDelete}
       >
         Reset
-      </button>
+      </Button>
     </>
   )
 }
