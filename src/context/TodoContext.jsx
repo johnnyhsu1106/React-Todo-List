@@ -56,7 +56,7 @@ const TodoProvider = ({ children }) => {
     setQuery(query);
   };
 
-  const todoContext = {
+  const value = {
     query,
     filteredTodos,
     handleTodoAdd,
@@ -68,7 +68,7 @@ const TodoProvider = ({ children }) => {
   };
 
   return (
-    <TodoContext.Provider value={todoContext}>
+    <TodoContext.Provider value={value}>
       {children}
     </TodoContext.Provider>
   )

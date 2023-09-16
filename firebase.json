@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "react-todo-list-by-jh",
     "public": "dist",
     "ignore": [
       "firebase.json",
