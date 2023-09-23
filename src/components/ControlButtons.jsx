@@ -16,7 +16,7 @@ const ControlButtons = () => {
         variant='outline-light'
         onClick={handleCompletedTodosDelete}
       >
-        Delete Completed
+        Clear Completed
       </Button>
       <div className='vr' />
       <Button 

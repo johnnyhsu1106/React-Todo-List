@@ -56,6 +56,10 @@ const TodoProvider = ({ children }) => {
     setQuery(query);
   };
 
+  const handleSearchQueryClear = () => {
+    setQuery('');
+  };
+
   const value = {
     query,
     filteredTodos,
@@ -64,7 +68,8 @@ const TodoProvider = ({ children }) => {
     handleTodoDelete,
     handleCompletedTodosDelete,
     handleAllTodosDelete,
-    hangleSearchQueryChange
+    hangleSearchQueryChange,
+    handleSearchQueryClear
   };
 
   return (

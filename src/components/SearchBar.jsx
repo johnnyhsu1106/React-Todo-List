@@ -5,6 +5,7 @@ import ControlButtons from './ControlButtons';
 const SearchBar = () => {
   const {
     query,
+    handleSearchQueryClear,
     hangleSearchQueryChange
   } = useTodoContext();
 
@@ -22,6 +23,12 @@ const SearchBar = () => {
           value={query}
           onChange={(e) => { hangleSearchQueryChange(e.target.value) }}
         />
+        <InputGroup.Text
+          className='clear-search-btn'
+          onClick={handleSearchQueryClear}
+        >
+          &times;
+        </InputGroup.Text>
       </InputGroup>
       <ControlButtons />
     </Stack>
