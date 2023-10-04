@@ -4,7 +4,11 @@ const LOCAL_STORAGE_KEY = 'todos';
 const TodoContext = createContext({});
 
 const useTodoContext = () => {
-  return useContext(TodoContext);
+  const context = useContext(TodoContext);
+  if (context === undefined) {
+    throw new Error('useTodoContext must be used within a TodoProvider');
+  }
+  return context;
 }
 
 const TodoProvider = ({ children }) => {
