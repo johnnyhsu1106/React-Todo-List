@@ -1,5 +1,7 @@
 import { createContext, useContext, useState, useMemo } from 'react'
 import useLocalStorage from '../hooks/useLocalStorage';
+import { v4 as uuidv4 } from 'uuid';
+
 const LOCAL_STORAGE_KEY = 'todos';
 const TodoContext = createContext({});
 
@@ -23,7 +25,7 @@ const TodoProvider = ({ children }) => {
 
   const handleTodoAdd = (title) => {
     setTodos((prevTodos) => {
-      return [...prevTodos, {id: crypto.randomUUID(), title, isCompleted: false}];
+      return [...prevTodos, {id: uuidv4(), title, isCompleted: false}];
     });
   };
 
