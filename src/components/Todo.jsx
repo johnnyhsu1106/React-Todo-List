@@ -8,7 +8,7 @@ const Todo = ({filteredTodo}) => {
     handleTodoDelete
   } = useTodoContext();
 
-  const {id, title, isCompleted } = filteredTodo;
+  const { id, title, isCompleted } = filteredTodo;
 
   return (
     <div className='d-flex align-items-center justify-content-between mb-2'>
