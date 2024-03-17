@@ -3,11 +3,11 @@ import useLocalStorage from '../hooks/useLocalStorage';
 import { v4 as uuidv4 } from 'uuid';
 
 const LOCAL_STORAGE_KEY = 'todos';
-const TodoContext = createContext({});
+const TodoContext = createContext(null);
 
 const useTodoContext = () => {
   const context = useContext(TodoContext);
-  if (context === undefined) {
+  if (context === null) {
     throw new Error('useTodoContext must be used within a TodoProvider');
   }
   return context;
@@ -19,7 +19,7 @@ const TodoProvider = ({ children }) => {
 
   const filteredTodos = useMemo(() => {
     return todos.filter((todo) => {
-      return todo.title.toLowerCase().includes(query.toLowerCase());
+      return todo.title.toLowerCase().includes(query.toLowerCase()); 
     });
   }, [todos, query]);
 
