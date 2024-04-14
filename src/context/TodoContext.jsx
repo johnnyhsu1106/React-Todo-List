@@ -24,30 +24,30 @@ const TodoProvider = ({ children }) => {
   }, [todos, query]);
 
   const handleTodoAdd = (title) => {
-    setTodos((prevTodos) => {
-      return [...prevTodos, {id: uuidv4(), title, isCompleted: false}];
+    setTodos((currTodos) => {
+      return [...currTodos, {id: uuidv4(), title, isCompleted: false}];
     });
   };
 
   const handleTodoToggle = (id) => {
-    setTodos((prevTodos) => {
-      return prevTodos.map((todo) => {
+    setTodos((currTodos) => {
+      return currTodos.map((todo) => {
         return todo.id === id ? {...todo, isCompleted: !todo.isCompleted } : todo;
       });
     });
   };
 
   const handleTodoDelete = (id) => {
-    setTodos((prevTodos) => {
-      return prevTodos.filter((todo) => { 
+    setTodos((currTodos) => {
+      return currTodos.filter((todo) => { 
         return todo.id !== id;
       });
     });
   };
 
   const handleCompletedTodosDelete = () => {
-    setTodos((prevTodos) => {
-      return prevTodos.filter((todo) => {
+    setTodos((currTodos) => {
+      return currTodos.filter((todo) => {
         return !todo.isCompleted;
       }); 
     })

@@ -30,7 +30,7 @@ const Todo = ({filteredTodo}) => {
         variant="outline-danger"
         onClick={() => (handleTodoDelete(id))}
       >
-        delete
+        Delete
       </Button>
 
     </div>

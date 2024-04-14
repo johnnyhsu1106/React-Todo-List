@@ -11,14 +11,14 @@ const SearchBar = () => {
 
   return (
     <Stack 
-      className='flex m-3 position-absolute top-0 end-0'
-      gap={3} 
+      className='flex mb-3'
+      gap={2} 
       direction='horizontal'
     >
       <InputGroup className='' size='md'>
         <Form.Control
           type='text'
-          placeholder="Search to do item"
+          placeholder="Search to do"
           aria-label="search"
           value={query}
           onChange={(e) => { hangleSearchQueryChange(e.target.value) }}
