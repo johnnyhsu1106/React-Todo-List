@@ -8,7 +8,7 @@ const TodoList = () => {
 
   return (
     <>
-      <h1 className='fs-2 mb-4'>{filteredTodos.length} todo left</h1>
+      <h1 className='fs-2 mb-4 w-100'>{filteredTodos.length} todo left</h1>
 
       <Form>
         {filteredTodos.map((filteredTodo) => {
