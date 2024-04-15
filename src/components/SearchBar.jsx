@@ -15,7 +15,7 @@ const SearchBar = () => {
       gap={2} 
       direction='horizontal'
     >
-      <InputGroup className='w-50' size='sm'>
+      <InputGroup className='w-75' size='sm'>
         <Form.Control
           type='text'
           placeholder="Search to do"
@@ -30,6 +30,7 @@ const SearchBar = () => {
           &times;
         </InputGroup.Text>
       </InputGroup>
+      <div className='vr' />
       <ControlButtons />
     </Stack>
   )

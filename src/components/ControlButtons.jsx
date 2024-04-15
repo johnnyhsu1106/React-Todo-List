@@ -18,7 +18,6 @@ const ControlButtons = () => {
       >
         Clear Completed
       </Button>
-      <div className='vr' />
       <Button 
         size='sm'
         variant='danger'
