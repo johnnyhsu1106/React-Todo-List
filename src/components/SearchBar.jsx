@@ -6,7 +6,7 @@ const SearchBar = () => {
   const {
     query,
     handleSearchQueryClear,
-    hangleSearchQueryChange
+    handleSearchQueryChange
   } = useTodoContext();
 
   return (
@@ -21,7 +21,7 @@ const SearchBar = () => {
           placeholder="Search to do"
           aria-label="search"
           value={query}
-          onChange={(e) => { hangleSearchQueryChange(e.target.value) }}
+          onChange={(e) => { handleSearchQueryChange(e.target.value) }}
         />
         <InputGroup.Text
           className='clear-search-btn'
