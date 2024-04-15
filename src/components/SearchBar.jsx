@@ -11,11 +11,11 @@ const SearchBar = () => {
 
   return (
     <Stack 
-      className='flex mb-3'
+      className='d-flex mb-5 justify-content-between align-items-center w-100'
       gap={2} 
       direction='horizontal'
     >
-      <InputGroup className='' size='md'>
+      <InputGroup className='w-50' size='sm'>
         <Form.Control
           type='text'
           placeholder="Search to do"

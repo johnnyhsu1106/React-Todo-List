@@ -12,19 +12,19 @@ const ControlButtons = () => {
     <>
       <Button
         className='fs-0'
-        size='md'
+        size='sm'
         variant='success'
         onClick={handleCompletedTodosDelete}
       >
-        Clear
+        Clear Completed
       </Button>
       <div className='vr' />
       <Button 
-        size='md'
+        size='sm'
         variant='danger'
         onClick={handleAllTodosDelete}
       >
-        Reset
+        Clear All
       </Button>
     </>
   )
