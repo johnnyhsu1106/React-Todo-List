@@ -1,5 +1,6 @@
 import { Form, Button, FormCheck  } from 'react-bootstrap';
 import { useTodoContext } from '../context/TodoContext';
+import PropTypes from 'prop-types';
 
 
 const Todo = ({filteredTodo}) => {
@@ -32,9 +33,18 @@ const Todo = ({filteredTodo}) => {
       >
         Delete
       </Button>
-
     </div>
   );
+};
+
+
+Todo.propTypes = {
+  filteredTodo: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    isCompleted: PropTypes.bool.isRequired
+  }),
+  
 }
 
 export default Todo;

@@ -8,8 +8,14 @@ const useLocalStorage = (key, initialValue) => {
     if (jsonValue === null) {
       return initialValue;
     }
+    let data;
+    try {
+      data = JSON.parse(jsonValue);
+    } catch (error) {
+      throw new Error('useLocalStorage could not parse JSON value');
+    }
 
-    return JSON.parse(jsonValue);
+    return data;
   });
 
   useEffect(() => {

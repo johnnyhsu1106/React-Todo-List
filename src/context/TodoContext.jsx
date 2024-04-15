@@ -1,7 +1,8 @@
 import { createContext, useContext, useState, useMemo } from 'react'
 import useLocalStorage from '../hooks/useLocalStorage';
-import { v4 as uuidv4 } from 'uuid';
 
+import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 const LOCAL_STORAGE_KEY = 'todos';
 const TodoContext = createContext(null);
 
@@ -58,7 +59,7 @@ const TodoProvider = ({ children }) => {
     setQuery('');
   };
 
-  const hangleSearchQueryChange = (query) => {
+  const handleSearchQueryChange = (query) => {
     setQuery(query);
   };
 
@@ -69,12 +70,12 @@ const TodoProvider = ({ children }) => {
   const value = {
     query,
     filteredTodos,
-    handleTodoAdd,
+    handleTodoAdd,  
     handleTodoToggle,
     handleTodoDelete,
     handleCompletedTodosDelete,
     handleAllTodosDelete,
-    hangleSearchQueryChange,
+    handleSearchQueryChange,
     handleSearchQueryClear
   };
 
@@ -83,6 +84,11 @@ const TodoProvider = ({ children }) => {
       {children}
     </TodoContext.Provider>
   )
-}
+};
+
+TodoProvider.propTypes = {
+  children: PropTypes.node.isRequired
+};
+
 
 export { useTodoContext, TodoProvider };

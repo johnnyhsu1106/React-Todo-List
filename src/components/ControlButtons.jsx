@@ -12,15 +12,15 @@ const ControlButtons = () => {
     <>
       <Button
         className='fs-0'
-        size='sm'
-        variant='outline-light'
+        size='md'
+        variant='success'
         onClick={handleCompletedTodosDelete}
       >
-        Clear Completed
+        Clear
       </Button>
       <div className='vr' />
       <Button 
-        size='sm'
+        size='md'
         variant='danger'
         onClick={handleAllTodosDelete}
       >

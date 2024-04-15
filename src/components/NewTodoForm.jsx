@@ -25,8 +25,8 @@ const NewTodoForm = () => {
 
 
   return (
-    <Form onSubmit={handleFormSubmit} className='flex justify-content-end mb-5'>
-      <Form.Group className="mb-3" controlId="TodoForm">
+    <Form onSubmit={handleFormSubmit} className='d-flex  justify-content-center mb-5 w-100'>
+      <Form.Group className="w-100" controlId="TodoForm">
         <Form.Label hidden>To do</Form.Label>
         <Form.Control
           value={todo} 
@@ -38,7 +38,7 @@ const NewTodoForm = () => {
       </Form.Group>
 
       <Button 
-        className='w-100'
+        className='w-50 mx-3'
         variant="secondary" 
         type="submit"
       >
